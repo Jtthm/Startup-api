@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "1782947347071",
+    "nome": "Carlos Souza",
+    "cargo": "Analista",
+    "cpf": "12345678901",
+    "email": "carlos@email.com",
+    "endereco": {
+      "cep": "06700000",
+      "numero": "123",
+      "logradouro": "Aguardando ViaCEP...",
+      "bairro": "Aguardando ViaCEP...",
+      "cidade": "Aguardando ViaCEP...",
+      "estado": "Aguardando ViaCEP..."
+    },
+    "status": "Ativo"
+  }
+]
