@@ -14,5 +14,21 @@
       "estado": "Aguardando ViaCEP..."
     },
     "status": "Ativo"
+  },
+  {
+    "id": "1782948038835",
+    "nome": "Mariana Lima",
+    "cargo": "Designer",
+    "cpf": "44455566622",
+    "email": "mari@email.com",
+    "endereco": {
+      "cep": "01311200",
+      "numero": "1000",
+      "logradouro": "Avenida Paulista",
+      "bairro": "Bela Vista",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    "status": "Ativo"
   }
 ]
