@@ -31,7 +31,7 @@ O que desenvolveu: Consumo da API externa (`viaCepService.js`), realização dos
 
 Integrante 4 ([Victor Godinho]/[godin77]):
 Responsabilidade: Ciclo de Vida do Registro (Update/Delete) e Documentação.
-O que desenvolveu: Implementação das rotas `PUT /colaboradores/:id` para atualização dinâmica de cargo/e-mail (com trava de segurança bloqueando alteração de CPF) e `DELETE /colaboradores/:id` com lógica de Soft Delete (mudança de status para "Inativo" sem exclusão física), além da estruturação deste arquivo `README.md`.
+O que desenvolveu: Implementação das rotas `PUT /colaboradores/:id` para atualização dinâmica de cargo/e-mail (com trava de segurança bloqueando alteração de CPF) e `DELETE /colaboradores/:id` com lógica de Soft Delete (mudança de status para "Inativo" sem exclusão física).
 
 ---
 
