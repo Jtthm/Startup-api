@@ -19,7 +19,7 @@ Para garantir a organização e as boas práticas no uso do GitHub, o projeto fo
 
 Integrante 1 ([João Pedro Gonçalves]/[Jtthl]):
 Responsabilidade: Infraestrutura, Estruturação de Arquivos e Rotas de Leitura.
-O que desenvolveu: Configuração inicial do servidor Express (`server.js`), criação da estrutura de pastas do projeto, desenvolvimento do arquivo de persistência local (`colaboradores.json`), módulo utilitário de leitura/escrita (`database.js`) e a implementação da rota `GET /colaboradores` (listagem geral e busca por ID/CPF).
+O que desenvolveu: Configuração inicial do servidor Express (`server.js`), criação da estrutura de pastas do projeto, desenvolvimento do arquivo de persistência local (`colaboradores.json`), módulo utilitário de leitura/escrita (`database.js`) e a implementação da rota `GET /colaboradores` (listagem geral e busca por ID/CPF), revisão final e procura de erros, além de hospedar.
 
 Integrante 2 ([Luiz Gustavo Monteiro]/[VexBOLD]):
 Responsabilidade: Validações de Segurança e Regras de Negócio.
