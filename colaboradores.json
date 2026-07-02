@@ -30,5 +30,21 @@
       "estado": "SP"
     },
     "status": "Ativo"
+  },
+  {
+    "id": "1782951600316",
+    "nome": "Julia Alencar",
+    "cargo": "Professora",
+    "cpf": "11122233344",
+    "email": "julia@etec.com",
+    "endereco": {
+      "cep": "01311200",
+      "numero": "100",
+      "logradouro": "Avenida Paulista",
+      "bairro": "Bela Vista",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    "status": "Ativo"
   }
 ]
