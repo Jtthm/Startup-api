@@ -34,7 +34,6 @@ app.get('/colaboradores', (req, res) => {
     return res.json(colaboradores);
 });
 
-
 app.post('/colaboradores', async (req, res) => {
     const { nome, cargo, cpf, email, cep, numero } = req.body;
     const colaboradores = lerDados();
@@ -51,10 +50,7 @@ app.post('/colaboradores', async (req, res) => {
     }
 
     try {
-
         const cepLimpo = cep.replace(/\D/g, '');
-
-        // 3. Consulta a API externa do ViaCEP usando o Axios
         const viaCepUrl = `https://viacep.com.br/ws/${cepLimpo}/json/`;
         const response = await axios.get(viaCepUrl);
 
@@ -85,14 +81,63 @@ app.post('/colaboradores', async (req, res) => {
         salvarDados(colaboradores);
 
         return res.status(201).json({ 
-            mensagem: "Colaborador cadastrado com sucesso com dados do ViaCEP!", 
+            mensagem: "Colaborador cadastrado com sucesso!", 
             colaborador: novoColaborador 
         });
 
     } catch (error) {
-
         return res.status(500).json({ erro: "Erro ao consultar a API externa do ViaCEP." });
     }
+});
+
+app.put('/colaboradores/:id', (req, res) => {
+    const { id } = req.params;
+    const { nome, cargo, email, cpf } = req.body;
+    const colaboradores = lerDados();
+
+    const index = colaboradores.findIndex(c => c.id === id);
+    if (index === -1) {
+        return res.status(404).json({ erro: "Colaborador não encontrado." });
+    }
+
+    if (cpf && cpf !== colaboradores[index].cpf) {
+        return res.status(400).json({ erro: "Por motivos de segurança, o CPF não pode ser alterado." });
+    }
+
+    if (email && !email.includes('@')) {
+        return res.status(400).json({ erro: "O novo e-mail informado é inválido." });
+    }
+
+    if (nome) colaboradores[index].nome = nome;
+    if (cargo) colaboradores[index].cargo = cargo;
+    if (email) colaboradores[index].email = email;
+
+    salvarDados(colaboradores);
+
+    return res.json({ 
+        mensagem: "Dados do colaborador atualizados com sucesso!", 
+        colaborador: colaboradores[index] 
+    });
+});
+
+
+app.delete('/colaboradores/:id', (req, res) => {
+    const { id } = req.params;
+    const colaboradores = lerDados();
+
+    const index = colaboradores.findIndex(c => c.id === id);
+    if (index === -1) {
+        return res.status(404).json({ erro: "Colaborador não encontrado." });
+    }
+
+    colaboradores[index].status = "Inativo";
+
+    salvarDados(colaboradores);
+
+    return res.json({ 
+        mensagem: "Colaborador desativado (Soft Delete) com sucesso!", 
+        colaborador: colaboradores[index] 
+    });
 });
 
 app.listen(PORT, () => {
